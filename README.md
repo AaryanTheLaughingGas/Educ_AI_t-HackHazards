@@ -94,8 +94,7 @@ Add images, GIFs, or screenshots if helpful!
 ### Local Setup:
 ```bash
 # Clone the repo
-git clone https://github.com/your-team/project-name
-
+git clone https://github.com/AaryanTheLaughingGas/Educ_AI_t-HackHazards.git
 # Install dependencies
 cd project-name
 npm install
