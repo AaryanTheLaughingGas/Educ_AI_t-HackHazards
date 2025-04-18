@@ -4,7 +4,7 @@ os.environ["TIKTOKEN_CACHE_DIR"] = "/tmp/tiktoken_cache"
 import json
 import pickle
 from pathlib import Path
-from streamlit_webrtc import webrtc_streamer, AudioProcessorBase
+from streamlit_webrtc import webrtc_streamer, AudioProcessorBase, WebRtcMode
 import av
 import streamlit as st
 import nest_asyncio
