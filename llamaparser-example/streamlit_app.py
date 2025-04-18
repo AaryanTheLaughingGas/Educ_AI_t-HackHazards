@@ -41,19 +41,20 @@ if "chat_history" not in st.session_state:
 st.title("🧠 Say Hello! to EducAIt 📖")
 st.subheader("The simplest AI-powered Accessibility Learning Assistant")
 
-uploaded_file = st.file_uploader("Upload a PDF document", type=["pdf"])
+if "documents" not in st.session_state:
+    uploaded_file = st.file_uploader("Upload a PDF document", type=["pdf"])
+    if uploaded_file:
+        with open("uploaded_doc.pdf", "wb") as f:
+            f.write(uploaded_file.read())
+    
+        reader = PDFReader()
+        documents = reader.load_data(file=Path("uploaded_doc.pdf"))
+        st.success(f"Loaded {len(documents)} document(s)")
+    else:
+        documents = st.session_state.documents
+        st.success(f"Loaded {len(documents)} document(s)")
 
-if uploaded_file:
-    with open("uploaded_doc.pdf", "wb") as f:
-        f.write(uploaded_file.read())
-
-    reader = PDFReader()
-    documents = reader.load_data(file=Path("uploaded_doc.pdf"))
-    st.success(f"Loaded {len(documents)} document(s)")
-
-    if documents:
-        st.text_area("Preview", documents[0].text[:1000], height=200)
-
+    if "query_engine" not in st.session_state and "documents" in st.session_state:
         # Setup embedding model and LLM
         embed_model = FastEmbedEmbedding(model_name="BAAI/bge-base-en-v1.5")
         Settings.embed_model = embed_model
@@ -76,7 +77,9 @@ if uploaded_file:
             documents=documents, storage_context=storage_context, show_progress=True
         )
         query_engine = index.as_query_engine(streaming=False, similarity_top_k=3, response_mode="compact")
-
+    
+    if "documents" in st.session_state: 
+        st.text_area("Preview", documents[0].text[:1000], height=200)
         # Voice Interaction
         st.header("🎤 Ask EducAIt a question via voice or text")
         duration = st.slider("Recording Duration (seconds)", 2, 10, 5)
