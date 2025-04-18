@@ -93,7 +93,7 @@ Add images, GIFs, or screenshots if helpful!
   ```Qdrant API Key: https://cloud.qdrant.io/```
 
 - .env file setup:
-  Once you've created your API keys, rename the ```sampler.env``` file as ```.env``` and replace the following placeholders:
+  Once you've created your API keys, create a ```.env``` file and add the following variables with your keys 🔑:
   ```
   LLAMA_CLOUD_API_KEY= ""
   QDRANT_API_KEY= ""
