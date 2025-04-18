@@ -13,3 +13,5 @@ nest_asyncio
 groq
 sounddevice
 scipy
+streamlit-webrtc
+av
