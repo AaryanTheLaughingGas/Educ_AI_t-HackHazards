@@ -23,7 +23,6 @@ from qdrant_client.http import models as rest
 
 from groq import Groq as GroqClient
 from scipy.io.wavfile import write
-import simpleaudio as sa
 
 # Load API keys
 llamaparse_api_key = os.getenv("LLAMA_CLOUD_API_KEY")
