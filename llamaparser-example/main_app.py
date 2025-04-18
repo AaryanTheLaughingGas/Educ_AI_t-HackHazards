@@ -39,11 +39,11 @@ def save_audio(frames, filename="query.wav", sample_rate=48000):
     audio_data = np.concatenate(frames)
     write(filename, sample_rate, audio_data)
 # Load API keys
-llamaparse_api_key = os.getenv("LLAMA_CLOUD_API_KEY")
-qdrant_url = os.getenv("QDRANT_URL")
-qdrant_api_key = os.getenv("QDRANT_API_KEY")
-groq_api_key = os.getenv("GROQ_API_KEY")
-groq_og_api_key = os.getenv("GROQ_og_API_KEY")
+llamaparse_api_key = st.secrets["LLAMA_CLOUD_API_KEY"]
+qdrant_url = st.secrets["QDRANT_URL"]
+qdrant_api_key = st.secrets["QDRANT_API_KEY"]
+groq_api_key = st.secrets["GROQ_API_KEY"]
+groq_og_api_key = st.secrets["GROQ_og_API_KEY"]
 
 # Initialize session state for chat history
 if "chat_history" not in st.session_state:
