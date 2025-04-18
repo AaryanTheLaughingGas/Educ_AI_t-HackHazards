@@ -1,5 +1,6 @@
 # streamlit_app.py
 import os
+import tempfile
 os.environ["TIKTOKEN_CACHE_DIR"] = tempfile.gettempdir()
 import json
 import pickle
