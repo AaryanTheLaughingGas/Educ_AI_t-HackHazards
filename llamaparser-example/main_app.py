@@ -104,7 +104,6 @@ if uploaded_file:
                 ctx = webrtc_streamer(
                     key="mic",
                     mode="sendonly",
-                    in_audio=True,
                     audio_processor_factory=AudioProcessor,
                     media_stream_constraints={"audio": True, "video": False},
                     async_processing=True,
@@ -113,8 +112,6 @@ if uploaded_file:
                 if ctx.audio_processor and st.button("🛑 Save Recording"):
                     save_audio(ctx.audio_processor.recorded_frames)
                     st.success("Audio saved as query.wav")
-                    write("query.wav", 44100, recording)
-                    st.success("Recording saved as query.wav")
 
                 client_og = GroqClient(api_key=groq_og_api_key)
 
