@@ -3,7 +3,8 @@ import os
 import json
 import pickle
 from pathlib import Path
-
+from streamlit_webrtc import webrtc_streamer, AudioProcessorBase
+import av
 import streamlit as st
 import nest_asyncio
 nest_asyncio.apply()
@@ -22,10 +23,21 @@ import qdrant_client
 from qdrant_client.http import models as rest
 
 from groq import Groq as GroqClient
-import sounddevice as sd
+# import sounddevice as sd
 from scipy.io.wavfile import write
 # import simpleaudio as sa
+class AudioProcessor(AudioProcessorBase):
+    def __init__(self) -> None:
+        self.recorded_frames = []
 
+    def recv(self, frame: av.AudioFrame) -> av.AudioFrame:
+        audio = frame.to_ndarray().flatten()
+        self.recorded_frames.append(audio)
+        return frame
+
+def save_audio(frames, filename="query.wav", sample_rate=48000):
+    audio_data = np.concatenate(frames)
+    write(filename, sample_rate, audio_data)
 # Load API keys
 llamaparse_api_key = os.getenv("LLAMA_CLOUD_API_KEY")
 qdrant_url = os.getenv("QDRANT_URL")
@@ -86,10 +98,22 @@ if uploaded_file:
         with col1:
             if st.button("🎙 Record Question"):
                 st.info("Recording...")
-                recording = sd.rec(int(duration * 44100), samplerate=44100, channels=1, dtype='int16')
-                sd.wait()
-                write("query.wav", 44100, recording)
-                st.success("Recording saved as query.wav")
+                # recording = sd.rec(int(duration * 44100), samplerate=44100, channels=1, dtype='int16')
+                # sd.wait()
+                ctx = webrtc_streamer(
+                    key="mic",
+                    mode="sendonly",
+                    in_audio=True,
+                    audio_processor_factory=AudioProcessor,
+                    media_stream_constraints={"audio": True, "video": False},
+                    async_processing=True,
+                )
+
+                if ctx.audio_processor and st.button("🛑 Save Recording"):
+                    save_audio(ctx.audio_processor.recorded_frames)
+                    st.success("Audio saved as query.wav")
+                                write("query.wav", 44100, recording)
+                                st.success("Recording saved as query.wav")
 
                 client_og = GroqClient(api_key=groq_og_api_key)
 
