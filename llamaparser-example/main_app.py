@@ -43,13 +43,7 @@ def save_audio(frames, filename="query.wav", sample_rate=48000):
         st.success(f"✅ Saved to {filename}")
     else:
         st.warning("⚠️ No audio data recorded.")
-ctx = webrtc_streamer(
-    key="mic",
-    mode="sendonly",
-    audio_processor_factory=AudioProcessor,
-    media_stream_constraints={"audio": True, "video": False},
-    async_processing=True,
-)
+
 # Load API keys
 llamaparse_api_key = st.secrets["LLAMA_CLOUD_API_KEY"]
 qdrant_url = st.secrets["QDRANT_URL"]
@@ -66,7 +60,13 @@ st.title("🧠 Say Hello! to EducAIt 📖")
 st.subheader("The simplest AI-powered Accessibility Learning Assistant")
 
 uploaded_file = st.file_uploader("Upload a PDF document", type=["pdf"])
-
+ctx = webrtc_streamer(
+    key="mic",
+    mode="sendonly",
+    audio_processor_factory=AudioProcessor,
+    media_stream_constraints={"audio": True, "video": False},
+    async_processing=True,
+)
 if uploaded_file:
     with open("uploaded_doc.pdf", "wb") as f:
         f.write(uploaded_file.read())
