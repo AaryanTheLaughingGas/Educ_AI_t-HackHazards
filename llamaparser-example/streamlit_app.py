@@ -22,7 +22,6 @@ import qdrant_client
 from qdrant_client.http import models as rest
 
 from groq import Groq as GroqClient
-import sounddevice as sd
 from scipy.io.wavfile import write
 import simpleaudio as sa
 
