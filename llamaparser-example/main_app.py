@@ -60,13 +60,7 @@ st.title("🧠 Say Hello! to EducAIt 📖")
 st.subheader("The simplest AI-powered Accessibility Learning Assistant")
 
 uploaded_file = st.file_uploader("Upload a PDF document", type=["pdf"])
-ctx = webrtc_streamer(
-    key="mic",
-    mode=WebRtcMode.SENDONLY,
-    audio_processor_factory=AudioProcessor,
-    media_stream_constraints={"audio": True, "video": False},
-    async_processing=True,
-)
+
 if uploaded_file:
     with open("uploaded_doc.pdf", "wb") as f:
         f.write(uploaded_file.read())
@@ -112,7 +106,13 @@ if uploaded_file:
                 st.info("Recording...")
                 # recording = sd.rec(int(duration * 44100), samplerate=44100, channels=1, dtype='int16')
                 # sd.wait()
-                
+                ctx = webrtc_streamer(
+                    key="mic",
+                    mode=WebRtcMode.SENDONLY,
+                    audio_processor_factory=AudioProcessor,
+                    media_stream_constraints={"audio": True, "video": False},
+                    async_processing=True,
+                )
                 if ctx.audio_processor and st.button("🛑 Save Recording"):
                     save_audio(ctx.audio_processor.recorded_frames)
                     st.success("Audio saved as query.wav")
