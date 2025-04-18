@@ -112,8 +112,8 @@ if uploaded_file:
                 if ctx.audio_processor and st.button("🛑 Save Recording"):
                     save_audio(ctx.audio_processor.recorded_frames)
                     st.success("Audio saved as query.wav")
-                                write("query.wav", 44100, recording)
-                                st.success("Recording saved as query.wav")
+                    write("query.wav", 44100, recording)
+                    st.success("Recording saved as query.wav")
 
                 client_og = GroqClient(api_key=groq_og_api_key)
 
