@@ -37,8 +37,13 @@ class AudioProcessor(AudioProcessorBase):
         return frame
 
 def save_audio(frames, filename="query.wav", sample_rate=48000):
-    audio_data = np.concatenate(frames)
-    write(filename, sample_rate, audio_data)
+    if frames:
+        audio_data = np.concatenate(frames)
+        write(filename, sample_rate, audio_data)
+        st.success(f"✅ Saved to {filename}")
+    else:
+        st.warning("⚠️ No audio data recorded.")
+
 # Load API keys
 llamaparse_api_key = st.secrets["LLAMA_CLOUD_API_KEY"]
 qdrant_url = st.secrets["QDRANT_URL"]
