@@ -1,7 +1,6 @@
 # streamlit_app.py
 import os
-import tempfile
-os.environ["LLAMA_INDEX_CACHE_DIR"] = tempfile.gettempdir()
+os.environ["TIKTOKEN_CACHE_DIR"] = tempfile.gettempdir()
 import json
 import pickle
 from pathlib import Path
