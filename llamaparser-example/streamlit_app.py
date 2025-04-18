@@ -1,7 +1,6 @@
 # streamlit_app.py
 import os
 import tempfile
-os.environ["TOKENIZERS_PARALLELISM"] = "false"  # Optional: suppress tokenizers warning
 os.environ["LLAMA_INDEX_CACHE_DIR"] = tempfile.gettempdir()
 import json
 import pickle
