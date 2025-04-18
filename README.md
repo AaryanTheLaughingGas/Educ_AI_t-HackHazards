@@ -86,18 +86,21 @@ Add images, GIFs, or screenshots if helpful!
 
 ### Requirements:
 - Python
-- Create the following API Keys:
-  > Groq API Key: https://console.groq.com/keys
-  > LlamaIndex API Key: https://cloud.llamaindex.ai/
-  > Qdrant API Key: https://cloud.qdrant.io/
-  > 
+- ```pip install -r requirements.txt```
+- Create the following API Keys: <br>
+  ```Groq API Key: https://console.groq.com/keys```<br>
+  ```LlamaIndex API Key: https://cloud.llamaindex.ai/```<br>
+  ```Qdrant API Key: https://cloud.qdrant.io/```
+
 - .env file setup:
   Once you've created your API keys, rename the ```sampler.env``` file as ```.env``` and replace the following placeholders:
-  > LLAMA_CLOUD_API_KEY= ""
-  > QDRANT_API_KEY= ""
-  > QDRANT_URL= ""
-  > GROQ_API_KEY= ""
-  > GROQ_og_API_KEY= "" (I've used 2 Groq API keys just for safety, you can replace the main_app.py code with just one key also 😊)
+  ```
+  LLAMA_CLOUD_API_KEY= ""
+  QDRANT_API_KEY= ""
+  QDRANT_URL= ""
+  GROQ_API_KEY= ""
+  GROQ_og_API_KEY= "" (I've used 2 Groq API keys just for safety, you can replace the main_app.py code with just one key also 😊)
+  ```
 
 ### Local Setup:
 ```bash
