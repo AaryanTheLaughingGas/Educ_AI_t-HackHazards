@@ -1,6 +1,8 @@
 # streamlit_app.py
 import os
-os.environ["TIKTOKEN_CACHE_DIR"] = "/tmp/tiktoken_cache"
+import tempfile
+os.environ["TOKENIZERS_PARALLELISM"] = "false"  # Optional: suppress tokenizers warning
+os.environ["LLAMA_INDEX_CACHE_DIR"] = tempfile.gettempdir()
 import json
 import pickle
 from pathlib import Path
