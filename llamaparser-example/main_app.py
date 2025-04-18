@@ -62,7 +62,7 @@ st.subheader("The simplest AI-powered Accessibility Learning Assistant")
 uploaded_file = st.file_uploader("Upload a PDF document", type=["pdf"])
 ctx = webrtc_streamer(
     key="mic",
-    mode="sendonly",
+    mode=WebRtcMode.SENDONLY,
     audio_processor_factory=AudioProcessor,
     media_stream_constraints={"audio": True, "video": False},
     async_processing=True,
