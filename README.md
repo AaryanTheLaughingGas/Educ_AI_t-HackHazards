@@ -70,7 +70,7 @@ Add images, GIFs, or screenshots if helpful!
 ## 📽️ Demo & Deliverables
 
 - **Demo Video Link:** [Paste YouTube or Loom link here]  
-- **Pitch Deck / PPT Link:** [Paste Google Slides / PDF link here]  
+- **Pitch Deck / PPT Link:** [Canva PPT Link](https://www.canva.com/design/DAGk63s4Nnc/UiRaxXSqn71eXdN4jRJG-Q/edit?utm_content=DAGk63s4Nnc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)   
 
 ---
 
