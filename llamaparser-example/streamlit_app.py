@@ -1,5 +1,6 @@
 # streamlit_app.py
 import os
+os.environ["TIKTOKEN_CACHE_DIR"] = "/tmp/tiktoken_cache"
 import json
 import pickle
 from pathlib import Path
@@ -25,11 +26,11 @@ from groq import Groq as GroqClient
 from scipy.io.wavfile import write
 
 # Load API keys
-llamaparse_api_key = os.getenv("LLAMA_CLOUD_API_KEY")
-qdrant_url = os.getenv("QDRANT_URL")
-qdrant_api_key = os.getenv("QDRANT_API_KEY")
-groq_api_key = os.getenv("GROQ_API_KEY")
-groq_og_api_key = os.getenv("GROQ_og_API_KEY")
+llamaparse_api_key = st.secrets["LLAMA_CLOUD_API_KEY"]
+qdrant_url = st.secrets["QDRANT_URL"]
+qdrant_api_key = st.secrets["QDRANT_API_KEY"]
+groq_api_key = st.secrets["GROQ_API_KEY"]
+groq_og_api_key = st.secrets["GROQ_og_API_KEY"]
 
 # Initialize session state for chat history
 if "chat_history" not in st.session_state:
