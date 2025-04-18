@@ -43,7 +43,13 @@ def save_audio(frames, filename="query.wav", sample_rate=48000):
         st.success(f"✅ Saved to {filename}")
     else:
         st.warning("⚠️ No audio data recorded.")
-
+ctx = webrtc_streamer(
+    key="mic",
+    mode="sendonly",
+    audio_processor_factory=AudioProcessor,
+    media_stream_constraints={"audio": True, "video": False},
+    async_processing=True,
+)
 # Load API keys
 llamaparse_api_key = st.secrets["LLAMA_CLOUD_API_KEY"]
 qdrant_url = st.secrets["QDRANT_URL"]
@@ -106,19 +112,11 @@ if uploaded_file:
                 st.info("Recording...")
                 # recording = sd.rec(int(duration * 44100), samplerate=44100, channels=1, dtype='int16')
                 # sd.wait()
-                ctx = webrtc_streamer(
-                    key="mic",
-                    mode="sendonly",
-                    audio_processor_factory=AudioProcessor,
-                    media_stream_constraints={"audio": True, "video": False},
-                    async_processing=True,
-                )
-
+                
                 if ctx.audio_processor and st.button("🛑 Save Recording"):
                     save_audio(ctx.audio_processor.recorded_frames)
                     st.success("Audio saved as query.wav")
-
-                client_og = GroqClient(api_key=groq_og_api_key)
+                    client_og = GroqClient(api_key=groq_og_api_key)
 
                 def transcribe_audio(audio_path: str, prompt: str = "") -> str:
                     with open(audio_path, "rb") as file:
