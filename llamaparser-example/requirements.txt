@@ -15,3 +15,5 @@ sounddevice
 scipy
 streamlit-webrtc
 av
+numpy
+scipy
