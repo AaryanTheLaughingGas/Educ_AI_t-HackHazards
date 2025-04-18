@@ -100,19 +100,18 @@ if uploaded_file:
         duration = st.slider("Recording Duration (seconds)", 2, 10, 5)
         col1, col2 = st.columns([1, 2])
         query_text = ""
-
+        ctx = webrtc_streamer(
+            key="mic",
+            mode=WebRtcMode.SENDONLY,
+            audio_processor_factory=AudioProcessor,
+            media_stream_constraints={"audio": True, "video": False},
+            async_processing=True,
+        )
         with col1:
             if st.button("🎙 Record Question"):
                 st.info("Recording...")
                 # recording = sd.rec(int(duration * 44100), samplerate=44100, channels=1, dtype='int16')
                 # sd.wait()
-                ctx = webrtc_streamer(
-                    key="mic",
-                    mode=WebRtcMode.SENDONLY,
-                    audio_processor_factory=AudioProcessor,
-                    media_stream_constraints={"audio": True, "video": False},
-                    async_processing=True,
-                )
                 if ctx.audio_processor and st.button("🛑 Save Recording"):
                     save_audio(ctx.audio_processor.recorded_frames)
                     st.success("Audio saved as query.wav")
