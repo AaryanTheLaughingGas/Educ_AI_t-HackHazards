@@ -108,30 +108,30 @@ if uploaded_file:
             async_processing=True,
         )
         with col1:
-            if st.button("🎙 Record Question"):
-                st.info("Recording...")
+            # if st.button("🎙 Record Question"):
+            st.info("Recording...")
                 # recording = sd.rec(int(duration * 44100), samplerate=44100, channels=1, dtype='int16')
                 # sd.wait()
-                if ctx.audio_processor and st.button("🛑 Save Recording"):
-                    save_audio(ctx.audio_processor.recorded_frames)
-                    st.success("Audio saved as query.wav")
-                    client_og = GroqClient(api_key=groq_og_api_key)
+            if ctx.audio_processor and st.button("🛑 Save Recording"):
+                save_audio(ctx.audio_processor.recorded_frames)
+                st.success("Audio saved as query.wav")
+                client_og = GroqClient(api_key=groq_og_api_key)
 
-                def transcribe_audio(audio_path: str, prompt: str = "") -> str:
-                    with open(audio_path, "rb") as file:
-                        transcription = client_og.audio.transcriptions.create(
-                            file=file,
-                            model="whisper-large-v3-turbo",
-                            prompt=prompt,
-                            response_format="verbose_json",
-                            timestamp_granularities=["segment"],
-                            language="en",
-                            temperature=0.0
-                        )
-                        return transcription.text
+            def transcribe_audio(audio_path: str, prompt: str = "") -> str:
+                with open(audio_path, "rb") as file:
+                    transcription = client_og.audio.transcriptions.create(
+                        file=file,
+                        model="whisper-large-v3-turbo",
+                        prompt=prompt,
+                        response_format="verbose_json",
+                        timestamp_granularities=["segment"],
+                        language="en",
+                        temperature=0.0
+                    )
+                    return transcription.text
 
-                query_text = transcribe_audio("query.wav")
-                st.write(f"You asked (via voice): {query_text}")
+            query_text = transcribe_audio("query.wav")
+            st.write(f"You asked (via voice): {query_text}")
 
         with col2:
             text_input = st.text_input("Or type your question")
