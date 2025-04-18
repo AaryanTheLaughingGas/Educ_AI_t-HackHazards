@@ -140,14 +140,6 @@ if uploaded_file:
                 )
                 response.write_to_file(output_path)
 
-           """ def play_audio(filepath="response.wav"):
-                try:
-                    wave_obj = sa.WaveObject.from_wave_file(filepath)
-                    play_obj = wave_obj.play()
-                    play_obj.wait_done()
-                except Exception as e:
-                    st.error(f"Playback failed: {e}")"""
-
             synthesize_speech(answer)
             st.audio("response.wav")
 
