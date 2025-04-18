@@ -13,4 +13,3 @@ nest_asyncio
 groq
 sounddevice
 scipy
-simpleaudio
