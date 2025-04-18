@@ -76,52 +76,60 @@ Add images, GIFs, or screenshots if helpful!
 
 ## ✅ Tasks & Bonus Checklist
 
-- [ ] **All members of the team completed the mandatory task - Followed at least 2 of our social channels and filled the form** (Details in Participant Manual)  
-- [ ] **All members of the team completed Bonus Task 1 - Sharing of Badges and filled the form (2 points)**  (Details in Participant Manual)
-- [ ] **All members of the team completed Bonus Task 2 - Signing up for Sprint.dev and filled the form (3 points)**  (Details in Participant Manual)
-
-*(Mark with ✅ if completed)*
+- [X] **All members of the team completed the mandatory task - Followed at least 2 of our social channels and filled the form** (Details in Participant Manual)  
+- [X] **All members of the team completed Bonus Task 1 - Sharing of Badges and filled the form (2 points)**  (Details in Participant Manual)
+- [X] **All members of the team completed Bonus Task 2 - Signing up for Sprint.dev and filled the form (3 points)**  (Details in Participant Manual)
 
 ---
 
 ## 🧪 How to Run the Project
 
 ### Requirements:
-- Node.js / Python / Docker / etc.
-- API Keys (if any)
-- .env file setup (if needed)
+- Python
+- Create the following API Keys:
+  > Groq API Key: https://console.groq.com/keys
+  > LlamaIndex API Key: https://cloud.llamaindex.ai/
+  > Qdrant API Key: https://cloud.qdrant.io/
+  > 
+- .env file setup:
+  Once you've created your API keys, rename the ```sampler.env``` file as ```.env``` and replace the following placeholders:
+  > LLAMA_CLOUD_API_KEY= ""
+  > QDRANT_API_KEY= ""
+  > QDRANT_URL= ""
+  > GROQ_API_KEY= ""
+  > GROQ_og_API_KEY= "" (I've used 2 Groq API keys just for safety, you can replace the main_app.py code with just one key also 😊)
 
 ### Local Setup:
 ```bash
 # Clone the repo
 git clone https://github.com/AaryanTheLaughingGas/Educ_AI_t-HackHazards.git
+
+# Create Virtual Environment in Python
+# For Windows
+python -m venv Cyberviz
+.\Cyberviz\Scripts\activate
+
 # Install dependencies
-cd project-name
-npm install
+cd llamaparser-example
+pip install -r requirements.txt
 
-# Start development server
-npm run dev
+# Start Streamlit server
+streamlit run main_app.py
 ```
-
-Provide any backend/frontend split or environment setup notes here.
-
 ---
 
 ## 🧬 Future Scope
 
 List improvements, extensions, or follow-up features:
 
-- 📈 More integrations  
-- 🛡️ Security enhancements  
-- 🌐 Localization / broader accessibility  
-
+- 📈 Add code helpers 
+- 🛡️ Include login details for more personalized platforms 
 ---
 
 ## 📎 Resources / Credits
 
-- APIs or datasets used  
-- Open source libraries or tools referenced  
-- Acknowledgements  
+- Groq, LlamaIndex, Qdrant API keys 
+- RAG application credits: https://youtu.be/w7Ap6gZFXl0 
 
 ---
 
