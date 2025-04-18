@@ -123,9 +123,8 @@ streamlit run main_app.py
 
 ## 🧬 Future Scope
 
-List improvements, extensions, or follow-up features:
 
-- 📈 Add code helpers 
+- 📈 Add code helpers to the application
 - 🛡️ Include login details for more personalized platforms 
 ---
 
