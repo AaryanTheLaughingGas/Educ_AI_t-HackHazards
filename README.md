@@ -123,7 +123,6 @@ streamlit run main_app.py
 
 ## 🧬 Future Scope
 
-
 - 📈 Add code helpers to the application
 - 🛡️ Include login details for more personalized platforms 
 ---
@@ -137,6 +136,9 @@ streamlit run main_app.py
 
 ## 🏁 Final Words
 
-Share your hackathon journey — challenges, learnings, fun moments, or shout-outs!
-
+Shout out to these awesome people!:
+🐦‍⬛ [Akash](https://github.com/Akashrajasekar)
+🧚[Ilfa](https://github.com/ilfa2003)
+🪄[Laya](https://github.com/Laya-Shree)
+🎮[Karthik](https://github.com/Karthik-Vishal03)
 ---
