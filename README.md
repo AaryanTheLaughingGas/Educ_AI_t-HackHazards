@@ -69,7 +69,7 @@ Add images, GIFs, or screenshots if helpful!
 
 ## 📽️ Demo & Deliverables
 
-- **Demo Video Link:** [Paste YouTube or Loom link here]  
+- **Demo Video Link:** [Loom Video Link](https://www.loom.com/share/52748a661b4945edb9d3d97c2a5c7b2d?sid=f6706453-bf75-4e7d-8710-f70fd97c293e)  
 - **Pitch Deck / PPT Link:** [Canva PPT Link](https://www.canva.com/design/DAGk63s4Nnc/UiRaxXSqn71eXdN4jRJG-Q/edit?utm_content=DAGk63s4Nnc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)   
 
 ---
