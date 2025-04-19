@@ -51,8 +51,11 @@ if "documents" not in st.session_state:
         documents = reader.load_data(file=Path("uploaded_doc.pdf"))
         st.success(f"Loaded {len(documents)} document(s)")
     else:
-        documents = st.session_state.documents
-        st.success(f"Loaded {len(documents)} document(s)")
+        st.warning("📄 Please upload a PDF document to continue.")
+        st.stop()
+else:
+    documents = st.session_state.documents
+    st.success(f"Loaded {len(documents)} document(s)")
 
     if "query_engine" not in st.session_state and "documents" in st.session_state:
         # Setup embedding model and LLM
