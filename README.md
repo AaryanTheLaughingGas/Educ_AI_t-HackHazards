@@ -136,9 +136,9 @@ streamlit run main_app.py
 
 ## 🏁 Final Words
 
-Shout out to these awesome people!:
-🐦‍⬛ [Akash](https://github.com/Akashrajasekar)
-🧚[Ilfa](https://github.com/ilfa2003)
-🪄[Laya](https://github.com/Laya-Shree)
-🎮[Karthik](https://github.com/Karthik-Vishal03)
+Shout out to these awesome people! : <br>
+🐦‍⬛ [Akash](https://github.com/Akashrajasekar) <br>
+🧚[Ilfa](https://github.com/ilfa2003) <br>
+🪄[Laya](https://github.com/Laya-Shree) <br>
+🎮[Karthik](https://github.com/Karthik-Vishal03) <br>
 ---
