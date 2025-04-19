@@ -28,7 +28,7 @@ to help students learn limitlessly with their personal AI tutor!
 ### Team Members:  
 [Aaryan Sinha](www.linkedin.com/in/aaryan-sinha)
 
-### Your Approach:  
+### My Approach:  
 - **Why this problem**: To help every student, parent and teacher with a no-cost no special equipment, solely learning focussed tool!   
 - **Key challenges addressed**: _Contextual responses_, _Voice-assisted learning_, _simplified UI_ for every age-group     
 - **Pivots, brainstorms, breakthroughs**: I was able to save chat-history so users can access their learning content any-time!
