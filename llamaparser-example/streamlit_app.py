@@ -49,7 +49,9 @@ if "documents" not in st.session_state:
     
         reader = PDFReader()
         documents = reader.load_data(file=Path("uploaded_doc.pdf"))
-        st.success(f"Loaded {len(documents)} document(s)")
+        st.success(f"Loaded your {len(documents)}-page document(s) successfully!")
+        st.session_state.documents = documents  # ✅ Save in session
+        st.experimental_rerun()  # ✅ Force rerun to reload app with documents
     else:
         st.warning("📄 Please upload a PDF document to continue.")
         st.stop()
