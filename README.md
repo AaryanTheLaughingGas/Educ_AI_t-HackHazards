@@ -93,13 +93,13 @@ Add images, GIFs, or screenshots if helpful!
   ```Qdrant API Key: https://cloud.qdrant.io/```
 
 - .env file setup:
-  Once you've created your API keys, create a ```.env``` file (inside 📁llamaparser-example) and add the following variables with your keys 🔑:
+  Once you've created your API keys, create a ```.env``` file (inside 📁llamaparser-example) <br> and add the following variables with your keys 🔑:
   ```
   LLAMA_CLOUD_API_KEY= ""
   QDRANT_API_KEY= ""
   QDRANT_URL= ""
   GROQ_API_KEY= ""
-  GROQ_og_API_KEY= "" (I've used 2 Groq API keys just for safety, you can replace the main_app.py code with just one key also 😊)
+  GROQ_og_API_KEY= "" (I've used 2 Groq API keys just for safety, you can replace and keep just one key in streamlit_app.py and local_deployment_app.py 😊)
   ```
 
 ### Local Setup:
