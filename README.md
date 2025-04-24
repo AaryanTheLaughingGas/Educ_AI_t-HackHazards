@@ -93,7 +93,7 @@ Add images, GIFs, or screenshots if helpful!
   ```Qdrant API Key: https://cloud.qdrant.io/```
 
 - .env file setup:
-  Once you've created your API keys, create a ```.env``` file and add the following variables with your keys 🔑:
+  Once you've created your API keys, create a ```.env``` file (inside 📁llamaparser-example) and add the following variables with your keys 🔑:
   ```
   LLAMA_CLOUD_API_KEY= ""
   QDRANT_API_KEY= ""
@@ -117,7 +117,7 @@ cd llamaparser-example
 pip install -r requirements.txt
 
 # Start Streamlit server
-streamlit run main_app.py
+streamlit run streamlit_app.py
 ```
 ---
 
