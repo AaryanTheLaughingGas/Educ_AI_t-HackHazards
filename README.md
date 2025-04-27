@@ -63,7 +63,9 @@ Most important features of my project:
 - ✅ Safety fall back with text-prompts also
 - ✅ Chat history saved for future reference 
 
-Add images, GIFs, or screenshots if helpful!
+![Image 1](https://github.com/AaryanTheLaughingGas/Educ_AI_t-HackHazards/blob/main/Assets/Page%201.png) <br>
+![Image 2](https://github.com/AaryanTheLaughingGas/Educ_AI_t-HackHazards/blob/main/Assets/STT%20and%20Text%20prompt.png) <br>
+![Image 3](https://github.com/AaryanTheLaughingGas/Educ_AI_t-HackHazards/blob/main/Assets/TTS%20Response%20and%20Chat%20history.png)
 
 ---
 
